@@ -1,4 +1,4 @@
-package main.java.entity;
+package cart.entity;
 
 
 
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Cart {
 
     //购买商品的集合
-    private HashMap<Items,Integer> goods;
+    private HashMap<cart.entity.Items,Integer> goods;
 
     //购物车的总金额
     private double totalPrice;
@@ -19,16 +19,16 @@ public class Cart {
     //构造方法
     public Cart()
     {
-        goods = new HashMap<Items,Integer>();
+        goods = new HashMap<cart.entity.Items,Integer>();
         totalPrice = 0.0;
     }
 
 
-    public HashMap<Items, Integer> getGoods() {
+    public HashMap<cart.entity.Items, Integer> getGoods() {
         return goods;
     }
 
-    public void setGoods(HashMap<Items, Integer> goods) {
+    public void setGoods(HashMap<cart.entity.Items, Integer> goods) {
         this.goods = goods;
     }
 
@@ -41,7 +41,7 @@ public class Cart {
     }
 
     //添加商品进购物车的方法
-    public boolean addGoodsInCart(Items item ,int number)
+    public boolean addGoodsInCart(cart.entity.Items item , int number)
     {
         if(goods.containsKey(item))    //goods 为HsahMap<Items,Integer>  key,value
         {
@@ -56,7 +56,7 @@ public class Cart {
     }
 
         //删除商品的方法
-    public boolean removeGoodsFromCart(Items item)
+    public boolean removeGoodsFromCart(cart.entity.Items item)
     {
         goods.remove(item);
         calTotalPrice(); //重新计算购物车的总金额
@@ -67,11 +67,11 @@ public class Cart {
     public double calTotalPrice()
     {
         double sum = 0.0;
-        Set<Items> keys = goods.keySet(); //获得键的集合
-        Iterator<Items> it = keys.iterator(); //获得迭代器对象
+        Set<cart.entity.Items> keys = goods.keySet(); //获得键的集合
+        Iterator<cart.entity.Items> it = keys.iterator(); //获得迭代器对象
         while(it.hasNext())
         {
-            Items i = it.next();
+            cart.entity.Items i = it.next();
             sum += i.getPrice()* goods.get(i);
         }
         this.setTotalPrice(sum); //设置购物车的总金额
@@ -81,9 +81,9 @@ public class Cart {
     public static void main(String[] args) {
 
         //先创建两个商品对象
-        Items i1 = new Items(1,"沃特篮球鞋","温州",200,500,"001.jpg");
-        Items i2 = new Items(2,"李宁运动鞋","广州",300,500,"002.jpg");
-        Items i3 = new Items(1,"沃特篮球鞋","温州",200,500,"001.jpg");
+        cart.entity.Items i1 = new cart.entity.Items(1,"沃特篮球鞋","温州",200,500,"001.jpg");
+        cart.entity.Items i2 = new cart.entity.Items(2,"李宁运动鞋","广州",300,500,"002.jpg");
+        cart.entity.Items i3 = new cart.entity.Items(1,"沃特篮球鞋","温州",200,500,"001.jpg");
 
         Cart c = new Cart();
         c.addGoodsInCart(i1, 1);
@@ -93,8 +93,8 @@ public class Cart {
 
 
         //变量购物商品的集合
-        Set<Map.Entry<Items, Integer>> items= c.getGoods().entrySet();
-        for(Map.Entry<Items, Integer> obj:items)
+        Set<Map.Entry<cart.entity.Items, Integer>> items= c.getGoods().entrySet();
+        for(Map.Entry<cart.entity.Items, Integer> obj:items)
         {
             System.out.println(obj);
         }

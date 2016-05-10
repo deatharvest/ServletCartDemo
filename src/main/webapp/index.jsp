@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
-<%@ page import="main.java.entity.Items"%>
-<%@ page import="main.java.dao.ItemsDAO"%>
+<%@ page import="cart.entity.Items"%>
+<%@ page import="cart.dao.ItemsDAO"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";

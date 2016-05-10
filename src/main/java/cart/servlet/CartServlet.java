@@ -1,8 +1,8 @@
-package main.java.servlet;
+package cart.servlet;
 
-import main.java.dao.ItemsDAO;
-import main.java.entity.Cart;
-import main.java.entity.Items;
+import cart.dao.ItemsDAO;
+import cart.entity.Cart;
+import cart.entity.Items;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +25,7 @@ public class CartServlet extends HttpServlet {
     }
 
     /**
-     * Destruction of the servlet. <br>
+     * Destruction of the cart.servlet. <br>
      */
     public void destroy() {
         super.destroy(); // Just puts "destroy" string in log
@@ -33,7 +33,7 @@ public class CartServlet extends HttpServlet {
     }
 
     /**
-     * The doGet method of the servlet. <br>
+     * The doGet method of the cart.servlet. <br>
      *
      * This method is called when a form has its tag value method equals to get.
      *
@@ -48,7 +48,7 @@ public class CartServlet extends HttpServlet {
     }
 
     /**
-     * The doPost method of the servlet. <br>
+     * The doPost method of the cart.servlet. <br>
      *
      * This method is called when a form has its tag value method equals to post.
      *
@@ -137,7 +137,7 @@ public class CartServlet extends HttpServlet {
     }
 
     /**
-     * Initialization of the servlet. <br>
+     * Initialization of the cart.servlet. <br>
      *
      * @throws ServletException if an error occurs
      */

@@ -1,13 +1,12 @@
-package main.java.dao;
+package cart.dao;
+
+import cart.entity.Items;
+import cart.util.DBHelper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
-import main.java.util.DBHelper;
-
-import main.java.entity.Items;
 
 //商品的业务逻辑类
 public class ItemsDAO {
